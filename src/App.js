@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import ViewWeather from './pages/ViewWeather';
+import AddWeather from './pages/AddWeather';
+import EditWeather from './pages/EditWeather';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <div className="min-h-screen w-full flex flex-col bg-white pb-4">
+    <Routes>
+      <Route path="/" element={<ViewWeather />} />
+      <Route path="/add" element={<AddWeather />} />
+      <Route path="/edit/:locationId" element={<EditWeather />} />
+    </Routes>
+  </div>
+);
 
 export default App;
